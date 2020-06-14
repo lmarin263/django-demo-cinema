@@ -22,7 +22,7 @@ class Auditorium(models.Model):
     cinema = models.ForeignKey('Cinema', on_delete=models.CASCADE)
     local_id = models.PositiveIntegerField(blank=True)
     description = models.TextField(max_length=500, blank=True)
-    seat_number = models.PositiveIntegerField(default=1)
+    seat_number = models.PositiveIntegerField(default=50)
 
     def save(self, *args, **kwargs):
         if self.local_id == None:
