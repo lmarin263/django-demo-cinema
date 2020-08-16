@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cinema.apps.CinemaConfig',
-    'billboard.apps.BillboardConfig',
 ]
 
 MIDDLEWARE = [
