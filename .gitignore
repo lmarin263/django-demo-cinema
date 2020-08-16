@@ -1,5 +1,3 @@
-# Codigo antiguo
-legacy/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -130,3 +128,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Others
+legacy/
+.vscode/
+**/migrations/*
