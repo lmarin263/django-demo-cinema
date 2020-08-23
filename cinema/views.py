@@ -1,17 +1,23 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView, DetailView
 
-from .models import Cinema, Auditorium, Film, Screening
+from .models import Cinema
 
 
-# Create your views here.
-def index(request):
-    # Genera contadores de algunos de los objetos principales
-    num_cinemas = Cinema.objects.all().count()
-    num_auditoriums = Auditorium.objects.all().count()
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
-    # Renderiza la plantilla HTML index.html con los datos en la variable contexto
-    return render(
-        request,
-        'index.html',
-        context={'num_cinemas': num_cinemas, 'num_auditoriums': num_auditoriums},
-    )
+
+class CinemaMenuView(TemplateView):
+    template_name = 'cinema_menu.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CinemaMenuView, self).get_context_data(*args, **kwargs)
+        context['cinemas'] = Cinema.objects.all()
+        return context
+
+class CinemaInfoView(DetailView):
+    model = Cinema
+    paginate_by = 10
+
+class UnderConstructionView(TemplateView):
+    template_name = 'under_construction.html'

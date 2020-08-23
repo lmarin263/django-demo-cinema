@@ -5,7 +5,7 @@ from .models import Cinema, Auditorium, Film, Screening
 # Register your models here.
 @admin.register(Cinema)
 class CinemaAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
+    list_display = ('name', 'city_name', 'city_address', 'description')
 
 @admin.register(Auditorium)
 class AuditoriumAdmin(admin.ModelAdmin):

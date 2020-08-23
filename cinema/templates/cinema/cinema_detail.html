@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h1 id="titulo-sala" class="text-center p-1">{{cinema.name}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-9">
+        <p>Nos encontramos en {{cinema.city_address}}, en {{cinema.city_name}}.</p>
+        <p>Tenemos X salas disponibles.</p>
+        <p>{{cinema.description}}</p>
+    </div>
+    <div class="col">
+        <img src="{% static 'img/sala_ejemplo.jpg' %}"  class="w-100 p-3" alt="Sala de prueba" title="Sala de prueba">
+    </div>
+</div>
+
+{% endblock %}

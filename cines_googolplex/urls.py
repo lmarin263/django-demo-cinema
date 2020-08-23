@@ -22,6 +22,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cinema/', include('cinema.urls')),
-    path('', RedirectView.as_view(url='/cinema/', permanent=True)),
+    path('', include('cinema.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
