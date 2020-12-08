@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    {% if films %}
+    <h1>Actualmente disponemos de los siguientes cines:</h1>
+
+    <div class="container-fluid p-4">
+        <div class="row">
+        {% for film in films %}
+        <div class="col text-center h3">
+            <a href="{{ film.get_absolute_url }}">{{ film.title }}</a>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+        </div>
+        <div class="row">
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <h1>No disponemos de peliculas en estos momentos...</h1>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    {% if offers %}
+    <h1>Actualmente disponemos de las siguientes ofertas:</h1>
+
+    <div class="container-fluid p-4">
+        <div class="row">
+        {% for offer in offers %}
+        <div class="col text-center h3">
+            <a href="{{ offer.get_absolute_url }}">{{ offer.name }}</a>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+        </div>
+        <div class="row">
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <h1>No disponemos de ofertas en estos momentos...</h1>
+    {% endif %}
+</div>
+{% endblock %}
