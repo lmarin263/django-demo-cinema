@@ -15,7 +15,7 @@
         <p>{{cinema.description}}</p>
     </div>
     <div class="col">
-        <img src="{% static 'img/sala_ejemplo.jpg' %}"  class="w-100 p-3" alt="Sala de prueba" title="Sala de prueba">
+        <img src="{% if cinema.photo %}{{ cinema.photo.url }}{% else %}{% static 'img/sala_ejemplo.jpg' %}{% endif %}"  class="w-100 p-3" alt="Sala de prueba" title="Sala de prueba">
     </div>
 </div>
 
