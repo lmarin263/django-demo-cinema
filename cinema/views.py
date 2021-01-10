@@ -44,6 +44,3 @@ class OfferMenuView(TemplateView):
 class OfferInfoView(DetailView):
     model = Offer
     paginate_by = 10
-
-class UnderConstructionView(TemplateView):
-    template_name = 'under_construction.html'
