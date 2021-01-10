@@ -4,23 +4,16 @@
 {% block content %}
 <div>
     {% if offers %}
-    <h1>Actualmente disponemos de las siguientes ofertas:</h1>
+    <p>Actualmente disponemos de las siguientes ofertas:</p>
 
-    <div class="container-fluid p-4">
-        <div class="row">
-        {% for offer in offers %}
-        <div class="col text-center h3">
-            <a href="{{ offer.get_absolute_url }}">{{ offer.name }}</a>
-        </div>
-        {% if forloop.counter|divisibleby:4 %}
-        </div>
-        <div class="row">
-        {% endif %}
-        {% endfor %}
-        </div>
-    </div>
+    {% for offer in offers %}
+    <a href="{{ offer.get_absolute_url }}">{{ offer.name }}</a>
+    {% endfor %}
+
     {% else %}
-    <h1>No disponemos de ofertas en estos momentos...</h1>
+    <p>
+        No disponemos de ofertas en estos momentos...
+    </p>
     {% endif %}
 </div>
 {% endblock %}

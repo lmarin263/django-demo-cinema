@@ -4,23 +4,16 @@
 {% block content %}
 <div>
     {% if films %}
-    <h1>Actualmente disponemos de los siguientes cines:</h1>
+    <p>Actualmente disponemos de los siguientes cines:</p>
 
-    <div class="container-fluid p-4">
-        <div class="row">
-        {% for film in films %}
-        <div class="col text-center h3">
-            <a href="{{ film.get_absolute_url }}">{{ film.title }}</a>
-        </div>
-        {% if forloop.counter|divisibleby:4 %}
-        </div>
-        <div class="row">
-        {% endif %}
-        {% endfor %}
-        </div>
-    </div>
+    {% for film in films %}
+    <a href="{{ film.get_absolute_url }}">{{ film.title }}</a>
+    {% endfor %}
+
     {% else %}
-    <h1>No disponemos de peliculas en estos momentos...</h1>
+    <p>
+        No disponemos de peliculas en estos momentos...
+    </p>
     {% endif %}
 </div>
 {% endblock %}

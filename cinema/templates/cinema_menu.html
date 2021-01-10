@@ -4,23 +4,16 @@
 {% block content %}
 <div>
     {% if cinemas %}
-    <h1>Actualmente disponemos de los siguientes cines:</h1>
 
-    <div class="container-fluid p-4">
-        <div class="row">
-        {% for cinema in cinemas %}
-        <div class="col text-center h3">
-            <a href="{{ cinema.get_absolute_url }}">{{ cinema.name }} - {{ cinema.city_name }}</a>
-        </div>
-        {% if forloop.counter|divisibleby:4 %}
-        </div>
-        <div class="row">
-        {% endif %}
-        {% endfor %}
-        </div>
-    </div>
+    <p>Actualmente disponemos de los siguientes cines:</p>
+    {% for cinema in cinemas %}
+    <a href="{{ cinema.get_absolute_url }}">{{ cinema.name }} - {{ cinema.city_name }}</a>
+    {% endfor %}
+
     {% else %}
-    <h1>No disponemos de salas de cines en estos momentos...</h1>
+    <p>
+        No disponemos de salas de cines en estos momentos...
+    </p>
     {% endif %}
 </div>
 {% endblock %}
