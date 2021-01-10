@@ -1,74 +1,25 @@
-html {
-	position: relative;
-	min-height: 100%;
-}
-
-body {
-	margin-bottom: 60px; /* Margin bottom by footer height */
-}
-
 header {
 	background-color: lightcyan;
-	text-align: center;
-	width: max;
 }
 
 header h1, header h2 {
 	color: navy;
 }
 
-img.logo {
-	border-radius: 10px;
-}
-
 nav {
 	background-color: paleturquoise;
-	width: 100%;
-	font-size: x-large;
-}
-
-nav ul li {
-    padding: 5px;
-}
-
-nav ul li a {
 	text-transform: uppercase;
-	text-decoration: none;
-	-webkit-transition: all 0.6s ease;
-	-moz-transition: all 0.6s ease;
-	-ms-transition: all 0.6s ease;
-	-o-transition: all 0.6s ease;
-	transition: all 0.6s ease;
-}
-
-nav ul li a:hover {
-	background: deepskyblue;
 }
 
 footer {
 	background-color: dimgrey;
 	color: white;
-	width: max;
-	padding: 5px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-	min-height: 50px; /* Set the fixed height of the footer here */
-}
-
-footer h3 {
-	font-weight: bold;
 }
 
 footer a {
 	color: white;
-	font-size: large;
 }
 
 footer a:hover {
 	color: yellow;
-}
-
-p {
-	font-size: x-large;
 }
